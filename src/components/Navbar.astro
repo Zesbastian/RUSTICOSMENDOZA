@@ -1,0 +1,41 @@
+---
+// src/components/Navbar.astro
+---
+<header class="bg-gray-900 shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+    <a href="/" class="flex-shrink-0">
+      <img src="/imagenes/logo-rusticos-mendoza.png" alt="Rústicos Mendoza Logo" class="h-16">
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-6">
+      <div class="relative group">
+        <a href="#" class="text-white hover:text-gray-300 transition duration-300 font-medium flex items-center py-4">
+          Productos
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+        <div class="absolute -left-8 mt-0 w-56 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 invisible group-hover:visible">
+          <a href="/productos/revestimientos" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Revestimientos</a>
+          <a href="/productos/cementicios" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Cementicios</a>
+          <a href="/productos/mesadas" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Mesadas</a>
+          <a href="/productos/adhesivos" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Adhesivos</a>
+          <a href="/productos/pisos" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Pisos</a>
+          <a href="/productos/selladores" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Selladores</a>
+          <a href="/productos/zocalos" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Zócalos</a>
+          <a href="/productos/bachas" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Bachas</a>
+          <a href="/productos/promos" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Promos</a>
+        </div>
+      </div>
+
+      <a href="/nuestra-empresa" class="text-white hover:text-gray-300 transition duration-300 font-medium py-4">Nuestra Empresa</a>
+      <a href="/contacto" class="text-white hover:text-gray-300 transition duration-300 font-medium py-4">Contacto</a>
+      <a href="/preguntas-frecuentes" class="text-white hover:text-gray-300 transition duration-300 font-medium py-4">Preguntas Frecuentes</a>
+      <a href="/presupuesto" class="text-white hover:text-gray-300 transition duration-300 font-medium py-4">Presupuesto</a>
+    </nav>
+
+    <div class="md:hidden">
+      <button class="text-white hover:text-gray-300 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+    </div>
+  </div>
+</header> 

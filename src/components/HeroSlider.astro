@@ -1,0 +1,118 @@
+---
+// src/components/HeroSlider.astro
+---
+
+<div class="swiper h-[70vh] w-full">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide bg-cover bg-center" style="background-image: url('/imagenes/slider/slider-1.jpg');">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center p-4">
+        <h2 class="text-6xl md:text-8xl font-extrabold tracking-widest uppercase text-shadow">TERRAZO</h2>
+        <p class="mt-2 text-lg uppercase tracking-wider text-shadow-sm">
+          <span class="bg-red-700 px-2 py-1 rounded">Nueva linea de productos - Premium</span>
+        </p>
+        <a href="/productos/revestimientos" class="mt-6 bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded transition duration-300">
+          Ver modelos
+        </a>
+      </div>
+    </div>
+
+    <div class="swiper-slide bg-cover bg-center" style="background-image: url('/imagenes/slider/slider-3.jpg');">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center p-4">
+        <h2 class="text-6xl md:text-8xl font-extrabold tracking-widest uppercase text-shadow">PIEDRA</h2>
+        <h2 class="text-6xl md:text-8xl font-extrabold tracking-widest uppercase text-shadow -mt-4">LAVADA</h2>
+        <p class="mt-2 text-lg uppercase tracking-wider text-shadow-sm">
+          <span class="bg-green-600 px-2 py-1 rounded">Nueva linea de productos - Premium</span>
+        </p>
+        <a href="/productos/pisos" class="mt-6 bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded transition duration-300">
+          Ver modelos
+        </a>
+      </div>
+    </div>
+
+    <div class="swiper-slide bg-gray-900 text-white">
+      <div class="h-full grid grid-cols-1 md:grid-cols-2">
+        <div class="h-full w-full bg-cover bg-center" style="background-image: url('/imagenes/slider/slider-2.jpg');">
+        </div>
+        <div class="relative z-10 flex flex-col justify-center items-start h-full p-8 md:p-12">
+          <p class="text-sm uppercase tracking-wider">Nuevo</p>
+          <h2 class="text-4xl md:text-5xl font-bold mt-2">Bachas de Acero</h2>
+          <p class="mt-2 text-base text-gray-300">Tecnología y calidad en Acero Inoxidable</p>
+          <a href="/productos/bachas" class="mt-6 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-8 rounded transition duration-300">
+            Ver modelos
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide bg-cover bg-center" style="background-image: url('/imagenes/slider/slider-4.jpg');">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center p-4">
+        <h2 class="text-6xl md:text-8xl font-extrabold tracking-widest uppercase text-shadow">GRANÍTICA</h2>
+        <p class="mt-2 text-lg uppercase tracking-wider text-shadow-sm">
+          <span class="bg-gray-600 px-2 py-1 rounded">Nueva linea de productos - Premium</span>
+        </p>
+        <a href="/productos/pisos" class="mt-6 bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded transition duration-300">
+          Ver modelos
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+
+<style is:global>
+  @import 'swiper/css';
+  @import 'swiper/css/navigation';
+  @import 'swiper/css/pagination';
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 20px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #fff;
+  }
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .text-shadow-sm {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+  const swiper = new Swiper('.swiper', {
+    modules: [Navigation, Pagination, Autoplay],
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>

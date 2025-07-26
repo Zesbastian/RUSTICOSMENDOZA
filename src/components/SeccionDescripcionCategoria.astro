@@ -1,0 +1,31 @@
+---
+// src/components/SeccionDescripcionCategoria.astro
+export interface Props {
+    titulo: string;
+    texto: string;
+    imagen: string;
+    url: string;
+    ordenInverso?: boolean;
+}
+const { titulo, texto, imagen, url, ordenInverso = false } = Astro.props;
+---
+<a href={url} class="block group">
+  <div class="container mx-auto px-4 py-6"> {/* Reducimos el padding vertical para hacerlo más compacto */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+      <div class:list={["w-full h-64 rounded-lg overflow-hidden shadow-lg", { 'md:order-last': ordenInverso }]}>
+        <img 
+          src={imagen} 
+          alt={`Imagen de ${titulo}`} 
+          class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      <div class:list={["border-2 border-gray-300 rounded-lg p-8 h-full flex flex-col justify-center transition-all duration-300 group-hover:border-red-500 group-hover:shadow-xl", { 'md:order-first': ordenInverso }]}>
+        <h3 class="text-xl font-bold text-red-600 mb-2">{titulo}</h3>
+        <p class="text-gray-700">{texto}</p>
+      </div>
+
+    </div>
+  </div>
+</a>

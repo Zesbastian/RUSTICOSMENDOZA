@@ -1,0 +1,35 @@
+---
+// src/components/TarjetaProductoNormal.astro
+
+// Definimos la "forma" de los datos que recibirá este componente
+export interface Props {
+  producto: {
+    id: string;
+    nombre: string;
+    descripcion: string;
+    imagen: string;
+    url?: string; // Hacemos la URL opcional por si algunos productos no la tienen
+  };
+  categoria: string;
+}
+
+const { producto, categoria } = Astro.props;
+---
+<div class="bg-white rounded-lg shadow-md overflow-hidden group h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+  <a href={producto.url || `/productos/${categoria}/${producto.id}`} class="block">
+    <div class="h-64 overflow-hidden">
+      <img
+        src={producto.imagen}
+        alt={`Imagen de ${producto.nombre}`}
+        class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+      />
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-bold text-gray-800 mb-2 truncate">{producto.nombre}</h3>
+      <p class="text-gray-600 text-sm mb-4 line-clamp-3">{producto.descripcion}</p>
+      <span class="font-bold text-orange-600 hover:text-orange-700 mt-auto">
+        Ver detalles →
+      </span>
+    </div>
+  </a>
+</div>

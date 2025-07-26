@@ -1,0 +1,11 @@
+---
+// src/components/TarjetaCategoria.astro
+interface Props {
+    nombre: string;
+    url: string;
+}
+const { nombre, url } = Astro.props;
+---
+<a href={url} class="block bg-white p-8 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all">
+    <h3 class="text-2xl font-bold text-gray-800">{nombre}</h3>
+</a>

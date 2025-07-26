@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro'; // Importa el layout base
+import Cotizador from '../components/React_Components/Cotizador.jsx'; // Importa tu componente
+---
+
+<Layout title="Cotizador de Mesadas Rústicos Mendoza">
+  <main class="py-10">
+    <Cotizador client:load />
+  </main>
+</Layout>

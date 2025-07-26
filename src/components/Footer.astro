@@ -1,0 +1,41 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-gray-800 text-white">
+  <div class="container mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="/imagenes/logo-rusticos-mendoza.png" alt="Logo Rústicos Mendoza" class="h-16">
+        </a>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">CONTACTO</h3>
+        <p class="mb-2">Dir: Av. Bandera de los Andes 8334, Rodeo de la Cruz, Mendoza</p>
+        <p class="mb-2">Tel: <a href="tel:+5492615551897" class="hover:text-orange-400">261 555 1897</a></p>
+        <p>Email: <a href="mailto:rusticosmendozasa@gmail.com" class="hover:text-orange-400">rusticosmendozasa@gmail.com</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">MAPA DEL SITIO</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-orange-400">Inicio</a></li>
+          <li><a href="/productos/revestimientos" class="hover:text-orange-400">Productos</a></li>
+          <li><a href="/nuestra-empresa" class="hover:text-orange-400">Nuestra Empresa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">REDES SOCIALES</h3>
+        <div class="flex space-x-4">
+          <a href="https://www.instagram.com/rusticosmendoza/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400">Instagram</a>
+          <a href="https://www.facebook.com/MarmoleriaRusticosMendoza" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-900 py-4">
+    <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+      &copy; {currentYear} Rústicos Mendoza. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>

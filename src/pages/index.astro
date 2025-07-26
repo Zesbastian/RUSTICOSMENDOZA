@@ -1,16 +1,47 @@
 ---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import Beneficios from '../components/Beneficios.astro';
+import ProductosDestacados from '../components/ProductosDestacados.astro';
+import SeccionDescripcionCategoria from '../components/SeccionDescripcionCategoria.astro';
+import Testimonios from '../components/Testimonios.astro';
 
+// Datos para las descripciones de categorías (AHORA CON URLs para que sean clickeables)
+const descripciones = [
+    { titulo: 'Revestimientos', texto: 'Nuestros revestimientos están diseñados para dar vida a tus paredes y fachadas...', imagen: '/imagenes/home/home-cat-revestimientos.jpg', url: '/productos/revestimientos' },
+    { titulo: 'Cementicios', texto: 'Los productos cementicios son esenciales para proyectos de construcción y remodelación...', imagen: '/imagenes/home/home-cat-cementicios.jpg', url: '/productos/cementicios' },
+    { titulo: 'Mesadas', texto: 'Descubre nuestra selección de estilos de mesadas que se adaptan perfectamente a tus necesidades...', imagen: '/imagenes/home/home-cat-mesadas.jpg', url: '/productos/mesadas' },
+    { titulo: 'Adhesivos', texto: 'Entendemos la importancia de la eficiencia en tus proyectos...', imagen: '/imagenes/home/home-cat-adhesivos.jpg', url: '/productos/adhesivos' },
+    { titulo: 'Pisos', texto: 'Nuestra colección de pisos ofrece una amplia gama de opciones para cada rincón de tu hogar...', imagen: '/imagenes/home/home-cat-pisos.jpg', url: '/productos/pisos' },
+    { titulo: 'Selladores', texto: 'Encuentra selladores de alta calidad para la construcción...', imagen: '/imagenes/home/home-cat-selladores.jpg', url: '/productos/selladores' },
+    { titulo: 'Zócalos', texto: 'Descubrí la variedad de modelos de Zócalos que tenemos para vos...', imagen: '/imagenes/home/home-cat-zocalos.jpg', url: '/productos/zocalos' },
+];
 ---
+<Layout title="Inicio - Rústicos Mendoza | Marmolería de primera calidad">
+  
+  <HeroSlider />
+   
+  <ProductosDestacados />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <Beneficios />
+
+  
+  <section class="bg-white py-16">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800">PRODUCTOS</h2>
+    </div>
+    {descripciones.map((desc, index) => (
+      <SeccionDescripcionCategoria 
+        titulo={desc.titulo}
+        texto={desc.texto}
+        imagen={desc.imagen}
+        url={desc.url}
+        ordenInverso={index % 2 !== 0}
+      />
+    ))}
+  </section>
+  
+  <Testimonios />
+
+</Layout>

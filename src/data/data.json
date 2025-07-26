@@ -1,0 +1,105 @@
+{
+  "productos": {
+    "revestimientos": [
+      {
+        "id": "terrazo-aconcagua",
+        "nombre": "Terrazo Aconcagua",
+        "descripcion": "Un producto con gran versatilidad para usarlo tanto en pisos como en revestimientos, mesas, mesadas y vanitorys.",
+        "imagen": "/imagenes/productos/terrazo-aconcagua.jpg",
+        "detalles": {
+          "medida_estandar": "40cm x 40cm",
+          "otras_medidas": "50cm x 50cm | 60cm x 60cm | 65cm x 50cm",
+          "espesor": "20mm",
+          "unidades_m2": "6.25"
+        }
+      },
+      {
+        "id": "terrazo-ansenuza",
+        "nombre": "Terrazo Ansenuza",
+        "descripcion": "Atributos atemporales, sostenible, de alto tránsito y fácil mantenimiento.",
+        "imagen": "/imagenes/productos/terrazo-ansenuza.jpg",
+        "detalles": {
+          "medida_estandar": "40cm x 40cm",
+          "otras_medidas": "50cm x 50cm | 60cm x 60cm",
+          "espesor": "20mm",
+          "unidades_m2": "6.25"
+        }
+      }
+    ],
+    "cementicios": [],
+    "mesadas": [],
+    "adhesivos": [],
+    "pisos": {
+      "pisosPremium": [
+        {
+          "id": "premium-negro",
+          "nombre": "PREMIUM NEGRO",
+          "imagen": "/imagenes/productos/premium-negro.jpg",
+          "url": "https://rusticosmendoza.ar/producto/premium-negro/"
+        },
+        {
+          "id": "premium-rojo",
+          "nombre": "PREMIUM ROJO",
+          "imagen": "/imagenes/productos/premium-rojo.jpg",
+          "url": "https://rusticosmendoza.ar/producto/premium-rojo/"
+        },
+        {
+          "id": "premium-blanco",
+          "nombre": "PREMIUM BLANCO",
+          "imagen": "/imagenes/productos/premium-blanco.jpg",
+          "url": "https://rusticosmendoza.ar/producto/premium-blanco/"
+        },
+        {
+          "id": "premium-tostado",
+          "nombre": "PREMIUM TOSTADO",
+          "imagen": "/imagenes/productos/premium-tostado.jpg",
+          "url": "https://rusticosmendoza.ar/producto/premium-tostado/"
+        }
+      ],
+      "pisosGraniticos": [
+        {
+          "id": "granitico-gris-mara",
+          "nombre": "GRANÍTICO GRIS MARA",
+          "imagen": "/imagenes/productos/granitico-gris-mara.jpg",
+          "url": "https://rusticosmendoza.ar/producto/granitico-gris-mara/"
+        },
+        {
+          "id": "granitico-rosa-del-salto",
+          "nombre": "GRANÍTICO ROSA DEL SALTO",
+          "imagen": "/imagenes/productos/granitico-rosa-del-salto.jpg",
+          "url": "https://rusticosmendoza.ar/producto/granitico-rosa-del-salto/"
+        },
+        {
+          "id": "granitico-san-felipe",
+          "nombre": "GRANÍTICO SAN FELIPE",
+          "imagen": "/imagenes/productos/granitico-san-felipe.jpg",
+          "url": "https://rusticosmendoza.ar/producto/granitico-san-felipe/"
+        }
+      ],
+      "pisosRusticos": [
+        {
+          "id": "rustico-laja-san-juan",
+          "nombre": "RÚSTICO LAJA SAN JUAN",
+          "imagen": "/imagenes/productos/rustico-laja-san-juan.jpg",
+          "url": "https://rusticosmendoza.ar/producto/rustico-laja-san-juan/"
+        },
+        {
+          "id": "rustico-negro",
+          "nombre": "RÚSTICO NEGRO",
+          "imagen": "/imagenes/productos/rustico-negro.jpg",
+          "url": "https://rusticosmendoza.ar/producto/rustico-negro/"
+        },
+        {
+          "id": "rustico-rojo",
+          "nombre": "RÚSTICO ROJO",
+          "imagen": "/imagenes/productos/rustico-rojo.jpg",
+          "url": "https://rusticosmendoza.ar/producto/rustico-rojo/"
+        }
+      ]
+    },
+    "selladores": [],
+    "zocalos": [],
+    "bachas": [],
+    "promos": []
+  }
+}

@@ -1,0 +1,34 @@
+---
+// src/layouts/Layout.astro
+
+// Importamos los componentes que formarán parte de TODAS las páginas.
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Definimos las "props" que una página puede pasarle al Layout.
+// En este caso, cada página deberá proporcionar un título.
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Rústicos Mendoza - Marmolería de primera calidad en Mendoza. Mesadas, revestimientos, pisos y más." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-50 text-gray-800 font-sans">
+		<Navbar />
+
+		<main>
+			<slot />
+		</main>
+
+		<Footer />
+	</body>
+</html>

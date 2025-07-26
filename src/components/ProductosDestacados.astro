@@ -1,0 +1,28 @@
+---
+// src/components/ProductosDestacados.astro
+const productos = [
+    { nombre: 'Laja San Juan', categoria: 'Pisos para interior', imagen: '/imagenes/home/home-prod-laja.jpg' },
+    { nombre: 'Piso Laja Gregoriana', categoria: 'Baldosas Rústicas', imagen: '/imagenes/home/home-prod-gregoriana.jpg' },
+    { nombre: 'Simil Block', categoria: 'Línea Revestimientos', imagen: '/imagenes/home/home-prod-simil-block.jpg' },
+]
+---
+<section class="bg-gray-50 pt-16 pb-4">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-2xl font-bold text-red-600">Nuestras mesadas de granito combinan diseño, calidad y resistencia</h3>
+    <p class="max-w-4xl mx-auto mt-4 text-gray-600 text-lg">
+      Una mesada bien elegida no solo embellece tus ambientes, también aporta funcionalidad y durabilidad por años. Descubrí nuestras opciones en granito y encontrá el estilo que mejor se adapta a tu hogar con Rústicos Mendoza.
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      {productos.map(p => (
+        // AÑADIMOS la clase "group" al contenedor del enlace si lo hacemos clickeable en el futuro
+        <div class="group">
+          {/* AÑADIMOS las clases de transición y hover para el borde rojo */}
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-transparent transition-all duration-300 group-hover:border-red-500 group-hover:shadow-2xl">
+              <img src={p.imagen} alt={p.nombre} class="w-full h-auto"/>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

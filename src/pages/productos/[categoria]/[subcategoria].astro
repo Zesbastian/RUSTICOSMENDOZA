@@ -1,0 +1,46 @@
+---
+// src/pages/productos/[categoria]/[subcategoria].astro
+import Layout from '../../../layouts/Layout.astro';
+import data from '../../../data/data.json';
+import TarjetaProducto from '../../../components/TarjetaProducto.astro';
+
+export async function getStaticPaths() {
+  const paths = [];
+  // Buscamos solo las categorías que son objetos (es decir, que tienen sub-categorías)
+  const categoriasConSub = Object.keys(data.productos).filter(cat => typeof data.productos[cat] === 'object' && !Array.isArray(data.productos[cat]));
+
+  for (const categoria of categoriasConSub) {
+    const subcategorias = Object.keys(data.productos[categoria]);
+    for (const subcategoria of subcategorias) {
+      paths.push({
+        params: { categoria, subcategoria },
+        props: { productos: data.productos[categoria][subcategoria] }
+      });
+    }
+  }
+  return paths;
+}
+
+const { categoria, subcategoria } = Astro.params;
+const { productos } = Astro.props;
+
+const tituloPagina = subcategoria.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+---
+<Layout title={`Productos - ${tituloPagina}`}>
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-5xl font-bold text-center mb-2">{tituloPagina}</h1>
+    <p class="text-center text-gray-500 mb-12 text-xl">Catálogo de productos</p>
+    
+    {productos && productos.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {productos.map(producto => (
+          <TarjetaProducto producto={producto} />
+        ))}
+      </div>
+    ) : (
+      <p class="text-center text-xl text-gray-500 mt-16">
+        No hay productos cargados en esta categoría todavía.
+      </p>
+    )}
+  </div>
+</Layout>
