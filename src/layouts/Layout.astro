@@ -1,19 +1,15 @@
 ---
 // src/layouts/Layout.astro
-
-// Importamos los componentes que formarán parte de TODAS las páginas.
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-// Definimos las "props" que una página puede pasarle al Layout.
-// En este caso, cada página deberá proporcionar un título.
 interface Props {
 	title: string;
 }
 const { title } = Astro.props;
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" class="h-full">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Rústicos Mendoza - Marmolería de primera calidad en Mendoza. Mesadas, revestimientos, pisos y más." />
@@ -22,10 +18,17 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-gray-50 text-gray-800 font-sans">
+	
+	<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
 		<Navbar />
 
-		<main>
+		{/*
+		  CAMBIO IMPORTANTE AQUÍ:
+		  - La etiqueta <main> ahora tiene "flex-grow", lo que le permite
+			expandirse y ocupar todo el espacio disponible entre el Navbar y el Footer.
+			Esto es lo que permitirá que nuestra página de "pisos" ocupe toda la pantalla.
+		*/}
+		<main class="flex-grow flex flex-col">
 			<slot />
 		</main>
 

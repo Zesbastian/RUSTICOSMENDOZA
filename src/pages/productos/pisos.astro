@@ -1,0 +1,79 @@
+---
+// src/pages/productos/pisos.astro
+import Layout from '../../layouts/Layout.astro';
+
+const secciones = [
+  {
+    titulo: 'Compactos Premium',
+    descripcion: 'Los pisos Compactos Premium son solo los indicados para los más exigentes.',
+    imagen: '/imagenes/pisos-cover/premium.jpg',
+    url: '/productos/pisos/pisosPremium'
+  },
+  {
+    titulo: 'Graníticos',
+    descripcion: 'Resistencia y diseño que perduran en el tiempo, ideales para exteriores e interiores.',
+    imagen: '/imagenes/pisos-cover/graniticos.jpg',
+    url: '/productos/pisos/pisosGraniticos'
+  },
+  {
+    titulo: 'Rústicos',
+    descripcion: 'Perfectos para espacios naturales y cálidos. Diseño tradicional con fuerza.',
+    imagen: '/imagenes/pisos-cover/rusticos.jpg',
+    url: '/productos/pisos/pisosRusticos'
+  }
+];
+---
+
+<Layout title="Pisos - Rústicos Mendoza">
+  <main class="flex flex-col md:flex-row w-full" style="height: calc(100vh - 88px);">
+    {secciones.map((seccion, index) => (
+      <a 
+        href={seccion.url} 
+        class:list={[
+          "group relative flex-1 overflow-hidden transition-all duration-700 ease-in-out",
+          // Clases específicas de color del texto del sitio original
+          { 'text-white': index === 0 },
+          { 'text-white': index === 1 },
+          { 'text-white': index === 2 },
+        ]}
+      >
+        <div 
+          class="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out group-hover:scale-110" 
+          style={`background-image: url(${seccion.imagen})`}>
+        </div>
+        
+        <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+
+        <div class="relative w-full h-full flex items-center justify-center p-4 md:justify-start md:p-8 transition-all duration-700 ease-in-out">
+          
+          <h2 class:list={[
+            "text-4xl font-extrabold tracking-wider uppercase text-shadow transition-all duration-700 ease-in-out md:group-hover:opacity-0",
+            // Colores de los títulos como en el original
+            { 'bg-[#c14d2e] p-2 rounded': seccion.titulo === 'RÚSTICOS' }
+          ]}>
+            {seccion.titulo.split(' ').map(palabra => <span>{palabra}<br/></span>)}
+          </h2>
+
+          <div class="hidden md:flex flex-col absolute top-0 right-0 h-full w-[60%] p-12 justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200"
+style="background-color: #a5442b;"          >
+            <p class="text-white text-xl leading-relaxed">{seccion.descripcion}</p>
+          </div>
+
+          
+
+        </div>
+      </a>
+    ))}
+  </main>
+</Layout>
+
+<style is:global>
+  .text-shadow {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  }
+  
+  /* Hack para que el flexbox funcione como queremos en el hover */
+  main:hover > a.group:not(:hover) {
+    width: 20%;
+  }
+</style>
